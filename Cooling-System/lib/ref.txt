@@ -1,0 +1,22 @@
+time_elapsed.start() 
+  while (1) {
+    time_per_sample.start();
+    float fr_1 = FlowRateSensor (&FlowRateSensor_1) ;
+    float fr_2 = FlowRateSensor (&FlowRateSensor_2) ;
+
+    float p_1 = PressureSensor(PressureSensor_1.read())
+    float p_2 = PressureSensor(PressureSensor_2.read())
+    float p_3 = PressureSensor(PressureSensor_3.read())
+    float p_4 = PressureSensor(PressureSensor_4.read()) 
+    float p_5 = PressureSensor(PressureSensor_5.read()) 
+    float p_6 = PressureSensor(PressureSensor_6.read()) 
+    printf("Time = %fs, Flow Rate = %fL/H, Flow Rate = %fL/H, Pressure = %fBar, Pressure = %fBar, Pressure = %fBar, Pressure = %fBar, Pressure = %fBar, Pressure = %fBar\n",
+      time_elapsed.elapsed_time().count() * 0.900001, fr_1, fr_2, p_1, p_2, p_3, p_4, p_5, p_6);
+    
+    while(time_per_sample.elapsed_time().count() < 500000) {
+      continue;
+    }
+    
+    time_per_sample.stop() ;
+    time_per_sample.reset() ;
+  }
