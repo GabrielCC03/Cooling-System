@@ -2,9 +2,9 @@
 
 // Define pins
 const int ledPin = 13; // Define the LED pin
-const int pressurePin = A0; // Define Pressure Sensor Pin - For blue-pill use: PA0
-const int tempPin = A1; // Define Temperature Sensor Pin - For blue-pill use: PA1
-const int flowmeterPin = D0; // Define Flowmeter Sensor Pin - For blue-pill use: PB0 
+const int pressurePin = PA0; // Define Pressure Sensor Pin - For blue-pill use: PA0 - For Nucleo use: A0
+const int tempPin = PA1; // Define Temperature Sensor Pin - For blue-pill use: PA1 - For Nucleo use: A1
+const int flowmeterPin = PB0; // Define Flowmeter Sensor Pin - For blue-pill use: PB0  - For Nucleo use: D0
 const int interruptPin = 0; // Define interrupt pin
 
 // Define Pressure Sensor constants
